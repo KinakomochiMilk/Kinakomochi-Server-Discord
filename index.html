@@ -85,7 +85,7 @@
         }
 
         h2 { color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 8px; margin-top: 0; }
-        h3 { color: #555; border-left: 4px solid var(--accent); padding-left: 10px; }
+        h3 { color: #555; border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 1.5rem; }
 
         .btn-join {
             display: inline-block;
@@ -122,7 +122,6 @@
         .status-offline { background-color: var(--offline); }
         .ping-tag { font-size: 0.8rem; background: #f0f0f0; padding: 2px 8px; border-radius: 5px; margin-left: 10px; }
 
-        /* 自己紹介用テーブル */
         .profile-info table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
         .profile-info td { padding: 12px; border-bottom: 1px solid #eee; }
 
@@ -159,7 +158,7 @@
             <section class="card">
                 <h2>👋 サーバー紹介</h2>
                 <p>「きなこもち鯖」は、管理人の自作Botや厳選された多機能Botたちが24時間体制であなたをサポートする最新鋭のDiscordサーバーです。</p>
-                <p>IFUTOさんの協力により24時間バニラ鯖が稼働開始しました！</p>
+                <p>現在はIFUTOさん運営の24時間バニラ鯖、および管理人PCによる工業鯖が稼働中！</p>
             </section>
 
             <section class="card">
@@ -212,20 +211,38 @@
 
         <div id="rules" class="tab-content">
             <div class="card">
-                <h2 style="text-align: center;">【きなこもち鯖】新・公式憲章</h2>
+                <h2 style="text-align: center;">【きなこもち鯖】公式憲章</h2>
+                <p style="text-align: center; font-style: italic;">当サーバーは「ゆるゆる・もちもち」がモットー。しかし、この平穏を守るためには最低限の「作法」が必要です。</p>
+
                 <h3>第一条：礼節の嗜み</h3>
-                <p>挨拶は最強の装備です。「よろしく」「お疲れ様」――その一言が、君の格を上げます。</p>
+                <p><strong>GGWP & GLHF</strong>：Valorant 等の競技シーンにおいて、挨拶は最強の装備です。「よろしく」「お疲れ様」――その一言が、チームの士気を、君の格を上げます。</p>
+
                 <h3>第二条：規律と技術の行使</h3>
                 <ul>
-                    <li><strong>不正の断絶</strong>：チート行為は即刻追放。</li>
-                    <li><strong>創造の自由</strong>：鯖に負荷をかけすぎない範囲で自由に！</li>
+                    <li><strong>不正の断絶（Splatoon / Valorant など）</strong>：公式が認めぬ外部ツール、魂を売ったチート行為は即刻追放対象です。</li>
+                    <li><strong>創造の自由（Minecraftなど）</strong>：MOD導入は自由。ただし、鯖を悲鳴させる負荷や、他人の努力を無に帰す行為は厳禁。</li>
+                    <li><strong>KILABの精神</strong>：ここは「知恵」を磨く聖域。磨いた牙は、他人を傷つけるためではなく、高みを目指すために振るうこと。</li>
                 </ul>
+
+                <h3>第三条：防衛と安全対策</h3>
+                <ul>
+                    <li><strong>No Spam / No Scam</strong>：スパム行為は一律禁止。詳細は資料チャンネルをチェック。かつての「悪夢」を繰り返してはならない。</li>
+                    <li><strong>セキュリティの鉄則</strong>：二要素認証（2FA）を過信せず、出所不明のファイルには手を出すな。</li>
+                </ul>
+
+                <h3>第四条：フラットな関係性</h3>
+                <p><strong>敬語・タメ口の境界線なし</strong>：ここに上下関係は存在しません。相手への敬意さえあれば、言葉遣いは自由。友達を、同志を、ライバルを増やそう。</p>
+
                 <h3>第五条：マイクラ鯖・禁忌事項</h3>
                 <ul>
-                    <li>荒らし・窃盗の禁止。平和な土地を愛してください。</li>
-                    <li><strong>Gregを許すな</strong>：これは信仰であり、共通の敵である。</li>
+                    <li><strong>荒らし・窃盗の禁止</strong>：平和な土地を愛してください。</li>
+                    <li><strong>Gregを許すな</strong>：これは信仰であり、呪いであり、共通の敵である。</li>
+                    <li><strong>透視（Xray）についての見解</strong>：使用は個人の自由とするが、「デジタルマイナー」という文明の利器があることを忘れるべからず。</li>
                 </ul>
-                <p style="text-align: right; margin-top: 1rem;"><small>Created by: KinakomochiMilk</small></p>
+
+                <p style="text-align: right; margin-top: 2rem;"><strong>「適当に、でも大切に」</strong><br>
+                ルールを遵守し、最高にもちもちした時間を楽しみましょう！<br>
+                <small>Created by: KinakomochiMilk / 2026.04.03更新</small></p>
             </div>
         </div>
 
@@ -261,7 +278,10 @@
             for (let i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
             
             document.getElementById(tabName).classList.add('active');
-            event.currentTarget.classList.add('active');
+            
+            const targetBtn = Array.from(buttons).find(b => b.onclick.toString().includes(tabName));
+            if(targetBtn) targetBtn.classList.add('active');
+
             document.querySelector('.main-content').scrollTop = 0;
         }
 
