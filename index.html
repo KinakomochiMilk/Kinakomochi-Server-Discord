@@ -289,34 +289,37 @@
         }
 
         async function updateServerStatus(serverKey, prefix) {
-            const startTime = Date.now();
-            try {
-                const response = await fetch(`https://api.mcsrvstat.us/2/${SERVERS[serverKey]}`);
-                const data = await response.json();
-                const endTime = Date.now();
+    const startTime = Date.now();
+    try {
+        // APIを mcstatus.io に変更してみる
+        const response = await fetch(`https://api.mcstatus.io/v2/status/java/${SERVERS[serverKey]}`);
+        const data = await response.json();
+        const endTime = Date.now();
 
-                const dot = document.getElementById(`${prefix}-dot`);
-                const text = document.getElementById(`${prefix}-status-text`);
-                const ping = document.getElementById(`${prefix}-ping`);
-                const players = document.getElementById(`${prefix}-players`);
+        const dot = document.getElementById(`${prefix}-dot`);
+        const text = document.getElementById(`${prefix}-status-text`);
+        const ping = document.getElementById(`${prefix}-ping`);
+        const players = document.getElementById(`${prefix}-players`);
 
-                if (data.online) {
-                    dot.className = "status-indicator status-online";
-                    text.innerText = "ONLINE";
-                    text.style.color = "var(--online)";
-                    ping.innerText = `${endTime - startTime} ms`;
-                    players.innerText = `${data.players.online} / ${data.players.max}`;
-                } else {
-                    dot.className = "status-indicator status-offline";
-                    text.innerText = "OFFLINE";
-                    text.style.color = "var(--offline)";
-                    ping.innerText = "- ms";
-                    players.innerText = "0 / 0";
-                }
-            } catch (error) {
-                document.getElementById(`${prefix}-status-text`).innerText = "取得エラー";
-            }
+        // mcstatus.io のデータ構造に合わせて判定
+        if (data.online === true) {
+            dot.className = "status-indicator status-online";
+            text.innerText = "ONLINE";
+            text.style.color = "var(--online)";
+            ping.innerText = `${endTime - startTime} ms`;
+            players.innerText = `${data.players.online} / ${data.players.max}`;
+        } else {
+            dot.className = "status-indicator status-offline";
+            text.innerText = "OFFLINE";
+            text.style.color = "var(--offline)";
+            ping.innerText = "- ms";
+            players.innerText = "0 / 0";
         }
+    } catch (error) {
+        console.error("Fetch error:", error);
+        document.getElementById(`${prefix}-status-text`).innerText = "取得エラー";
+    }
+}
         
         fetchStatus();
         setInterval(fetchStatus, 60000);
