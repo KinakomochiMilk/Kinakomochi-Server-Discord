@@ -158,21 +158,21 @@
             <section class="card">
                 <h2>👋 サーバー紹介</h2>
                 <p>「きなこもち鯖」は、管理人の自作Botや厳選された多機能Botたちが24時間体制であなたをサポートする最新鋭のDiscordサーバーです。</p>
-                <p>現在はIFUTOさん運営の24時間バニラ鯖、および管理人PCによる工業鯖が稼働中！</p>
+                <p>現在は管理人PCによるMAINバニラ（Java/統合版対応）、およびIFUTOさん運営の24時間バニラ鯖（Java版）が稼働中！</p>
             </section>
 
             <section class="card">
                 <h2>⛏️ Minecraft Servers</h2>
                 <div class="grid">
-                    <div style="border-left: 6px solid var(--online); padding-left: 15px;">
-                        <h3>バニラ(24h)生活鯖</h3>
-                        <p>IFUTOさん運営。誰でも参加可能な24時間バニラ環境です。</p>
-                        <span id="home-v-badge" class="stat-badge">取得中...</span>
-                    </div>
                     <div style="border-left: 6px solid var(--accent); padding-left: 15px;">
-                        <h3>工業MOD(ATM9)鯖</h3>
-                        <p>管理人PCによる企画鯖。Intelの第4世代CPUが全力稼働中。</p>
-                        <span id="home-i-badge" class="stat-badge">取得中...</span>
+                        <h3>MAINバニラ (1.21.1)</h3>
+                        <p>Java/統合版どちらでも参加可能なメイン環境。07:00-23:00稼働中。</p>
+                        <span id="home-m-badge" class="stat-badge">取得中...</span>
+                    </div>
+                    <div style="border-left: 6px solid var(--online); padding-left: 15px;">
+                        <h3>SUBバニラ (1.21.11)</h3>
+                        <p>IFUTOさん運営。誰でも参加可能な24時間バニラ環境（Java版）です。</p>
+                        <span id="home-v-badge" class="stat-badge">取得中...</span>
                     </div>
                 </div>
             </section>
@@ -183,7 +183,22 @@
                 <h2>📊 リアルタイム稼働状況</h2>
                 <div class="grid">
                     <div class="server-card">
-                        <h3>バニラサーバー</h3>
+                        <h3>MAINバニラ (Java/統合版)</h3>
+                        <p style="font-size: 0.8rem; color: #888;">
+                            Java: standard-containers.gl.joinmc.link<br>
+                            統合版: standard-containers.gl.at.ply.gg (Port: 40365)
+                        </p>
+                        <div>
+                            <span class="status-indicator status-offline" id="m-dot"></span>
+                            <span id="m-status-text">取得中...</span>
+                            <span class="ping-tag" id="m-ping">- ms</span>
+                        </div>
+                        <p style="margin-top: 15px;">Players: <strong id="m-players">0 / 0</strong></p>
+                        <small>運営: きなこもちミルク</small>
+                    </div>
+
+                    <div class="server-card">
+                        <h3>SUBバニラ (Java版)</h3>
                         <p style="font-size: 0.8rem; color: #888;">details-psychology.gl.joinmc.link</p>
                         <div>
                             <span class="status-indicator status-offline" id="v-dot"></span>
@@ -192,18 +207,6 @@
                         </div>
                         <p style="margin-top: 15px;">Players: <strong id="v-players">0 / 0</strong></p>
                         <small>運営: IFUTO</small>
-                    </div>
-
-                    <div class="server-card">
-                        <h3>工業サーバー</h3>
-                        <p style="font-size: 0.8rem; color: #888;">classic-bahrain.gl.joinmc.link</p>
-                        <div>
-                            <span class="status-indicator status-offline" id="i-dot"></span>
-                            <span id="i-status-text">取得中...</span>
-                            <span class="ping-tag" id="i-ping">- ms</span>
-                        </div>
-                        <p style="margin-top: 15px;">Players: <strong id="i-players">0 / 0</strong></p>
-                        <small>運営: きなこもちミルク</small>
                     </div>
                 </div>
             </div>
@@ -287,21 +290,20 @@
         }
 
         const SERVERS = {
-            vanilla: "details-psychology.gl.joinmc.link",
-            industrial: "classic-bahrain.gl.joinmc.link"
+            main: "standard-containers.gl.joinmc.link",
+            vanilla: "details-psychology.gl.joinmc.link"
         };
 
         async function updateAllStatus() {
             await Promise.all([
-                updateServerStatus('vanilla', 'v', 'home-v-badge'),
-                updateServerStatus('industrial', 'i', 'home-i-badge')
+                updateServerStatus('main', 'm', 'home-m-badge'),
+                updateServerStatus('vanilla', 'v', 'home-v-badge')
             ]);
         }
 
         async function updateServerStatus(serverKey, prefix, homeBadgeId) {
             const startTime = Date.now();
             try {
-                // mcstatus.io APIを使用 (Query不要)
                 const res = await fetch(`https://api.mcstatus.io/v2/status/java/${SERVERS[serverKey]}`);
                 const data = await res.json();
                 const endTime = Date.now();
@@ -331,7 +333,7 @@
                     players.innerText = "0 / 0";
 
                     if (homeBadge) {
-                        homeBadge.innerText = "メンテナンス中";
+                        homeBadge.innerText = "停止中";
                         homeBadge.style.background = "var(--offline)";
                     }
                 }
