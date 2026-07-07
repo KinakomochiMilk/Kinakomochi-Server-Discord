@@ -158,21 +158,23 @@
             <section class="card">
                 <h2>👋 サーバー紹介</h2>
                 <p>「きなこもち鯖」は、管理人の自作Botや厳選された多機能Botたちが24時間体制であなたをサポートする最新鋭のDiscordサーバーです。</p>
-                <p>現在は管理人PCによるMAINバニラ（Java/統合版対応）、およびIFUTOさん運営の24時間バニラ鯖（Java版）が稼働中！</p>
+                <p>現在は管理人PCによるMAIN工業鯖（Java版限定）<s>、およびIFUTOさん運営の24時間バニラ鯖（Java版）</s>が稼働中！</p>
+                <p>第4世代i5の老兵CPUを徹底的に使い倒し、プレイヤーが10分間不在になると自動的に「省電力スリープ」に移行、誰かが接続すると約30秒で本起動する超エコシステムを搭載しています。</p>
+                <p>「適当に、でも大切に」をモットーにした、ちょっと最新鋭で最高にもちもちした要塞へようこそ！</p>
             </section>
 
             <section class="card">
                 <h2>⛏️ Minecraft Servers</h2>
                 <div class="grid">
                     <div style="border-left: 6px solid var(--accent); padding-left: 15px;">
-                        <h3>MAINバニラ (1.21.1)</h3>
-                        <p>Java/統合版どちらでも参加可能なメイン環境。07:00-23:00稼働中。</p>
+                        <h3>MAIN工業鯖</h3>
+                        <p>安心の24時間稼働！現在は工業Modサーバーとして稼働しています（Java版限定・統合版不可）。</p>
                         <span id="home-m-badge" class="stat-badge">取得中...</span>
                     </div>
-                    <div style="border-left: 6px solid var(--online); padding-left: 15px;">
-                        <h3>SUBバニラ (1.21.11)</h3>
-                        <p>IFUTOさん運営。誰でも参加可能な24時間バニラ環境（Java版）です。</p>
-                        <span id="home-v-badge" class="stat-badge">取得中...</span>
+                    <div style="border-left: 6px solid var(--pending); padding-left: 15px; opacity: 0.6;">
+                        <h3>SUBバニラ (動作休止中)</h3>
+                        <p>IFUTOさん運営。現在動作を休止しており、オンライン確認が取れていません。</p>
+                        <span id="home-v-badge" class="stat-badge">休止中</span>
                     </div>
                 </div>
             </section>
@@ -183,10 +185,10 @@
                 <h2>📊 リアルタイム稼働状況</h2>
                 <div class="grid">
                     <div class="server-card">
-                        <h3>MAINバニラ (Java/統合版)</h3>
+                        <h3>MAIN工業鯖 (Java版限定)</h3>
                         <p style="font-size: 0.8rem; color: #888;">
-                            Java: standard-containers.gl.joinmc.link<br>
-                            統合版: standard-containers.gl.at.ply.gg (Port: 40365)
+                            アドレス: standard-containers.gl.joinmc.link<br>
+                            ※工業化にともない、現在はJava版のみ参加可能です。Dynmap等のバニラ向け機能は現在導入しておりません。
                         </p>
                         <div>
                             <span class="status-indicator status-offline" id="m-dot"></span>
@@ -197,15 +199,15 @@
                         <small>運営: きなこもちミルク</small>
                     </div>
 
-                    <div class="server-card">
-                        <h3>SUBバニラ (Java版)</h3>
+                    <div class="server-card" style="opacity: 0.6;">
+                        <h3>SUBバニラ (動作休止中)</h3>
                         <p style="font-size: 0.8rem; color: #888;">details-psychology.gl.joinmc.link</p>
                         <div>
                             <span class="status-indicator status-offline" id="v-dot"></span>
-                            <span id="v-status-text">取得中...</span>
+                            <span id="v-status-text">休止中 (確認不可)</span>
                             <span class="ping-tag" id="v-ping">- ms</span>
                         </div>
-                        <p style="margin-top: 15px;">Players: <strong id="v-players">0 / 0</strong></p>
+                        <p style="margin-top: 15px;">Players: <strong>- / -</strong></p>
                         <small>運営: IFUTO</small>
                     </div>
                 </div>
@@ -214,27 +216,30 @@
 
         <div id="rules" class="tab-content">
             <div class="card">
-                <h2 style="text-align: center;">【きなこもち鯖】公式憲章</h2>
-                <p style="text-align: center; font-style: italic;">当サーバーは「ゆるゆる・もちもち」がモットー。しかし、この平穏を守るためには最低限の「作法」が必要です。</p>
+                <h2 style="text-align: center;">【きなこもち鯖】新・公式憲章</h2>
+                <p style="text-align: center; font-style: italic;">当サーバーは「ゆるゆる・もちもち」がモットー。しかし、この平穏を守り、高みを目指すためには最低限の「作法」が必要です。以下を熟読し、魂に刻んでから入室してください。</p>
 
                 <h3>第一条：礼節の嗜み</h3>
-                <p><strong>GGWP & GLHF</strong>：Valorant 等の競技シーンにおいて、挨拶は最強の装備です。「よろしく」「お疲れ様」――その一言が、チームの士気を、君の格を上げます。</p>
+                <p><strong>GGWP & GLHF</strong>：Valorant等の競技シーン、および開発のコードレビューにおいて、挨拶とリスペクトは最強の装備です。「よろしく」「お疲れ様」「レビューありがとう」――その一言が、チームの士気を、君の格を上げます。</p>
 
                 <h3>第二条：規律と技術の行使</h3>
                 <ul>
-                    <li><strong>不正の断絶（Splatoon / Valorant など）</strong>：公式が認めぬ外部ツール、魂を売ったチート行為は即刻追放対象です。</li>
-                    <li><strong>創造の自由（Minecraftなど）</strong>：MOD導入は自由。ただし、鯖を悲鳴させる負荷や、他人の努力を無に帰す行為は厳禁。</li>
-                    <li><strong>KILABの精神</strong>：ここは「知恵」を磨く聖域。磨いた牙は、他人を傷つけるためではなく、高みを目指すために振るうこと。</li>
+                    <li><strong>不正の断絶（Game）</strong>：公式が認めぬ外部ツール、魂を売ったチート行為は即刻追放対象です。</li>
+                    <li><strong>創造の自由（Minecraft / Dev）</strong>：MOD導入やライブラリの選定は自由。ただし、鯖を悲鳴させる負荷や、他人の努力を無に帰す行為（バグの放置など）は厳禁。</li>
+                    <li><strong>KILABの精神（Code & Wisdom）</strong>：ここは「知恵」を磨く聖域。質問の際は「試したこと」「ソースコード（要コードブロック化）」を明記すること。丸投げやAI生成コードのデバッグを他人に押し付ける行為は、牙の磨き方を間違えています。</li>
                 </ul>
 
                 <h3>第三条：防衛と安全対策</h3>
                 <ul>
-                    <li><strong>No Spam / No Scam</strong>：スパム行為は一律禁止。詳細は資料チャンネルをチェック。かつての「悪夢」を繰り返してはならない。</li>
-                    <li><strong>セキュリティの鉄則</strong>：二要素認証（2FA）を過信せず、出所不明のファイルには手を出すな。</li>
+                    <li><strong>No Spam / No Scam</strong>：スパム・怪しい副業勧誘は一律禁止。</li>
+                    <li><strong>セキュリティの鉄則（Creds）</strong>：二要素認証（2FA）を過信せず、出所不明のファイルには手を出すな。また、コード共有時にBotトークンやAPIキー（機密情報）を漏洩させる行為は、自国に爆弾を落とすに等しいと知れ。</li>
+                    <li><strong>＜注意＞</strong>：削除内容は記録されるため、されたくないものは管理者（KinakomochiMilk）に直接DMか、チケットツールでお伝えください。対応します。ただし、トークンやAPIキーをリセットできる場合はするようにしてください。</li>
+                    <li><strong>＠everyoneの禁止</strong>：この鯖での＠everyoneの使用を禁止とする。その代わり＠hereまたはメンションOKロールに送信することを推奨する。</li>
+                    <li><strong>ライセンスの順守</strong>：コードのコピペ・盗用は厳禁。OSSのライセンスを尊重し、紳士的なエンジニアであれ。</li>
                 </ul>
 
                 <h3>第四条：フラットな関係性</h3>
-                <p><strong>敬語・タメ口の境界線なし</strong>：ここに上下関係は存在しません。相手への敬意さえあれば、言葉遣いは自由。友達を、同志を、ライバルを増やそう。</p>
+                <p><strong>敬語・タメ口の境界線なし</strong>：ここに上下関係は存在しません。プログラミングの歴、ゲームのランクに関わらず、相手への敬意さえあれば言葉遣いは自由。友達を、同志を、ライバルを増やそう。</p>
 
                 <h3>第五条：マイクラ鯖・禁忌事項</h3>
                 <ul>
@@ -245,7 +250,7 @@
 
                 <p style="text-align: right; margin-top: 2rem;"><strong>「適当に、でも大切に」</strong><br>
                 ルールを遵守し、最高にもちもちした時間を楽しみましょう！<br>
-                <small>Created by: KinakomochiMilk / 2026.04.03更新</small></p>
+                <small>Created by: KinakomochiMilk / 2026年7月3日改定</small></p>
             </div>
         </div>
 
@@ -268,7 +273,7 @@
             <div class="card">
                 <h2>🤖 システム・Bot</h2>
                 <p>計10台の読み上げBotが稼働しています。</p>
-                <p>また、40ぐらいのボットで構成しています</p>
+                <p>また、自作Botを含む約40台の様々なBotでシステムを構築し、24時間体制でサーバーの利便性をサポートしています。</p>
             </div>
         </div>
 
@@ -290,15 +295,11 @@
         }
 
         const SERVERS = {
-            main: "standard-containers.gl.joinmc.link",
-            vanilla: "details-psychology.gl.joinmc.link"
+            main: "standard-containers.gl.joinmc.link"
         };
 
         async function updateAllStatus() {
-            await Promise.all([
-                updateServerStatus('main', 'm', 'home-m-badge'),
-                updateServerStatus('vanilla', 'v', 'home-v-badge')
-            ]);
+            await updateServerStatus('main', 'm', 'home-m-badge');
         }
 
         async function updateServerStatus(serverKey, prefix, homeBadgeId) {
