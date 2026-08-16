@@ -56,6 +56,9 @@
             border-radius: 12px;
             margin-bottom: 10px;
             transition: all 0.3s;
+            display: block; /* <a>タグ適用時の調整 */
+            text-decoration: none; /* リンクの下線を消去 */
+            box-sizing: border-box;
         }
 
         .tab-button:hover { background: rgba(255,255,255,0.4); }
@@ -140,6 +143,8 @@
         <button class="tab-button" onclick="openTab('rules')">📜 公式憲章（ルール）</button>
         <button class="tab-button" onclick="openTab('profile')">👤 管理人自己紹介</button>
         <button class="tab-button" onclick="openTab('system')">🤖 システム・Bot</button>
+        <!-- 追加した外部リンクボタン -->
+        <a href="https://kinakomochimilk.tail390097.ts.net/saba_guides/" target="_blank" class="tab-button">📖 ガイド＆インフォ ↗</a>
         
         <div style="margin-top: auto; text-align: center; padding-top: 2rem;">
             <p style="font-size: 0.8rem; opacity: 0.7;">Est. 2026</p>
@@ -215,108 +220,108 @@
         </div>
 
         <div id="rules" class="tab-content">
-    <div class="card">
-        <h2 style="text-align: center;">【きなこもち鯖】新・公式憲章</h2>
+            <div class="card">
+                <h2 style="text-align: center;">【きなこもち鯖】新・公式憲章</h2>
 
-        <p style="text-align: center; font-style: italic;">
-            当サーバーは「ゆるゆる・もちもち」がモットー。<br>
-            しかし、この平穏を守り、高みを目指すためには最低限の「作法」が必要です。<br>
-            以下を熟読し、魂に刻んでから入室してください。
-        </p>
+                <p style="text-align: center; font-style: italic;">
+                    当サーバーは「ゆるゆる・もちもち」がモットー。<br>
+                    しかし、この平穏を守り、高みを目指すためには最低限の「作法」が必要です。<br>
+                    以下を熟読し、魂に刻んでから入室してください。
+                </p>
 
-        <h3>第一条：礼節の嗜み</h3>
-        <p>
-            <strong>GGWP &amp; GLHF</strong><br>
-            Valorant等の競技シーン、および開発のコードレビューにおいて、挨拶とリスペクトは最強の装備です。<br>
-            「よろしく」「お疲れ様」「レビューありがとう」――その一言が、チームの士気を、君の格を上げます。
-        </p>
+                <h3>第一条：礼節の嗜み</h3>
+                <p>
+                    <strong>GGWP &amp; GLHF</strong><br>
+                    Valorant等の競技シーン、および開発のコードレビューにおいて、挨拶とリスペクトは最強の装備です。<br>
+                    「よろしく」「お疲れ様」「レビューありがとう」――その一言が、チームの士気を、君の格を上げます。
+                </p>
 
-        <h3>第二条：規律と技術の行使</h3>
-        <ul>
-            <li>
-                <strong>不正の断絶（Game）</strong><br>
-                公式が認めぬ外部ツール、魂を売ったチート行為は即刻追放対象です。
-            </li>
+                <h3>第二条：規律と技術の行使</h3>
+                <ul>
+                    <li>
+                        <strong>不正の断絶（Game）</strong><br>
+                        公式が認めぬ外部ツール、魂を売ったチート行為は即刻追放対象です。
+                    </li>
 
-            <li>
-                <strong>創造の自由（Minecraft / Dev）</strong><br>
-                MOD導入やライブラリの選定は自由。ただし、鯖を悲鳴させる負荷や、他人の環境やサーバーに重大な影響を与える不具合を知りながら放置する行為は厳禁。
-            </li>
+                    <li>
+                        <strong>創造の自由（Minecraft / Dev）</strong><br>
+                        MOD導入やライブラリの選定は自由。ただし、鯖を悲鳴させる負荷や、他人の環境やサーバーに重大な影響を与える不具合を知りながら放置する行為は厳禁。
+                    </li>
 
-            <li>
-                <strong>KILABの精神（Code &amp; Wisdom）</strong><br>
-                ここは「知恵」を磨く聖域。質問の際は「試したこと」「ソースコード（要コードブロック化）」を明記すること。<br>
-                <strong>AIにコード作らせることは何も言いませんが、AIが生成したコードを内容も確認せず、そのまま他人へ修正依頼する行為や、問題解決を丸投げする行為は、やり方を間違えています。</strong>
-            </li>
-        </ul>
+                    <li>
+                        <strong>KILABの精神（Code &amp; Wisdom）</strong><br>
+                        ここは「知恵」を磨く聖域。質問の際は「試したこと」「ソースコード（要コードブロック化）」を明記すること。<br>
+                        <strong>AIにコード作らせることは何も言いませんが、AIが生成したコードを内容も確認せず、そのまま他人へ修正依頼する行為や、問題解決を丸投げする行為は、やり方を間違えています。</strong>
+                    </li>
+                </ul>
 
-        <h3>第三条：防衛と安全対策</h3>
-        <ul>
-            <li>
-                <strong>No Spam / No Scam</strong><br>
-                スパム・怪しい副業勧誘は一律禁止。
-            </li>
+                <h3>第三条：防衛と安全対策</h3>
+                <ul>
+                    <li>
+                        <strong>No Spam / No Scam</strong><br>
+                        スパム・怪しい副業勧誘は一律禁止。
+                    </li>
 
-            <li>
-                <strong>セキュリティの鉄則（Creds）</strong><br>
-                二要素認証（2FA）を過信せず、出所不明のファイルには手を出すな。<br>
-                また、コード共有時に<strong>BotトークンやAPIキー（機密情報）を漏洩させる行為</strong>は、自分の家の鍵を世界中へ配るようなものです。
-            </li>
+                    <li>
+                        <strong>セキュリティの鉄則（Creds）</strong><br>
+                        二要素認証（2FA）を過信せず、出所不明のファイルには手を出すな。<br>
+                        また、コード共有時に<strong>BotトークンやAPIキー（機密情報）を漏洩させる行為</strong>は、自分の家の鍵を世界中へ配るようなものです。
+                    </li>
 
-            <li>
-                <strong>＜注意＞</strong><br>
-                削除内容は記録されるため、されたくないものは管理者（KinakomochiMilk）へ直接DM、またはチケットツールでご連絡ください。対応します。<br>
-                ただし、BotトークンやAPIキーなどは、リセット可能な場合は速やかにリセットしてください。
-            </li>
+                    <li>
+                        <strong>＜注意＞</strong><br>
+                        削除内容は記録されるため、されたくないものは管理者（KinakomochiMilk）へ直接DM、またはチケットツールでご連絡ください。対応します。<br>
+                        ただし、BotトークンやAPIキーなどは、リセット可能な場合は速やかにリセットしてください。
+                    </li>
 
-            <li>
-                <strong>＠everyoneの禁止</strong><br>
-                この鯖での＠everyoneの使用は禁止します。必要な場合は＠here、またはメンションOKロールをご利用ください。
-            </li>
+                    <li>
+                        <strong>＠everyoneの禁止</strong><br>
+                        この鯖での＠everyoneの使用は禁止します。必要な場合は＠here、またはメンションOKロールをご利用ください。
+                    </li>
 
-            <li>
-                <strong>ライセンスの順守</strong><br>
-                コードのコピペ・盗用は厳禁。OSSライセンスを尊重し、紳士的なエンジニアであれ。
-            </li>
-        </ul>
+                    <li>
+                        <strong>ライセンスの順守</strong><br>
+                        コードのコピペ・盗用は厳禁。OSSライセンスを尊重し、紳士的なエンジニアであれ。
+                    </li>
+                </ul>
 
-        <h3>第四条：フラットな関係性</h3>
-        <p>
-            <strong>敬語・タメ口の境界線なし</strong><br>
-            ここに上下関係は存在しません。プログラミング歴、ゲームのランクに関わらず、相手への敬意さえあれば言葉遣いは自由。<br>
-            友達を、同志を、ライバルを増やそう。
-        </p>
+                <h3>第四条：フラットな関係性</h3>
+                <p>
+                    <strong>敬語・タメ口の境界線なし</strong><br>
+                    ここに上下関係は存在しません。プログラミング歴、ゲームのランクに関わらず、相手への敬意さえあれば言葉遣いは自由。<br>
+                    友達を、同志を、ライバルを増やそう。
+                </p>
 
-        <h3>第五条：マイクラ鯖・禁忌事項</h3>
-        <ul>
-            <li>
-                <strong>荒らし・窃盗の禁止</strong><br>
-                平和な土地を愛してください。
-            </li>
+                <h3>第五条：マイクラ鯖・禁忌事項</h3>
+                <ul>
+                    <li>
+                        <strong>荒らし・窃盗の禁止</strong><br>
+                        平和な土地を愛してください。
+                    </li>
 
-            <li>
-                <strong>Gregを許すな</strong><br>
-                これは信仰であり、呪いであり、共通の敵である。
-            </li>
+                    <li>
+                        <strong>Gregを許すな</strong><br>
+                        これは信仰であり、呪いであり、共通の敵である。
+                    </li>
 
-            <li>
-                <strong>透視（Xray）についての見解</strong><br>
-                使用は個人の自由とするが、「デジタルマイナー」という文明の利器があることを忘れるべからず。
-            </li>
-        </ul>
+                    <li>
+                        <strong>透視（Xray）についての見解</strong><br>
+                        使用は個人の自由とするが、「デジタルマイナー」という文明の利器があることを忘れるべからず。
+                    </li>
+                </ul>
 
-        <h3>第六条：その他の注意点</h3>
-        <p>
-            本ルールに記載のない事項についても、管理者がサーバー運営上必要と判断した場合は対応を行うことがあります。
-        </p>
+                <h3>第六条：その他の注意点</h3>
+                <p>
+                    本ルールに記載のない事項についても、管理者がサーバー運営上必要と判断した場合は対応を行うことがあります。
+                </p>
 
-        <p style="text-align:right; margin-top:2rem;">
-            <strong>「適当に、でも大切に」</strong><br>
-            ルールを遵守し、最高にもちもちした時間を楽しみましょう！<br>
-            <small>Created by: KinakomochiMilk<br>※2026年8月1日改定</small>
-        </p>
-    </div>
-</div>
+                <p style="text-align:right; margin-top:2rem;">
+                    <strong>「適当に、でも大切に」</strong><br>
+                    ルールを遵守し、最高にもちもちした時間を楽しみましょう！<br>
+                    <small>Created by: KinakomochiMilk<br>※2026年8月1日改定</small>
+                </p>
+            </div>
+        </div>
 
         <div id="profile" class="tab-content">
             <div class="card">
@@ -352,7 +357,7 @@
             
             document.getElementById(tabName).classList.add('active');
             
-            const targetBtn = Array.from(buttons).find(b => b.onclick.toString().includes(tabName));
+            const targetBtn = Array.from(buttons).find(b => b.onclick && b.onclick.toString().includes(tabName));
             if(targetBtn) targetBtn.classList.add('active');
 
             document.querySelector('.main-content').scrollTop = 0;
